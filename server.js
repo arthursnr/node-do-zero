@@ -8,7 +8,7 @@
 
 import { fastify } from 'fastify';
 //import { DatabaseMemory } from './database-memory.js'
-import { DatabasePoatgres } from './database-postgres.js';
+import { DatabasePostgres } from './database-postgres.js';
 
 const server = fastify()
 
@@ -19,7 +19,7 @@ const server = fastify()
 
 //const database = new DatabaseMemory()
 
-const database = new DatabasePoatgres()
+const database = new DatabasePostgres()
 
 
 // CRIAR O VIDEO (CREATE)
@@ -72,6 +72,7 @@ server.delete('/videos/:id', async (request, reply) => {
 })
 
 server.listen({
+    host: '0.0.0.0',
     port: process.env.PORT ?? 3333,
 })
 

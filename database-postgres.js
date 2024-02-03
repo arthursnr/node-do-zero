@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto"
 import sql from './db.js'
 
-export class DatabasePoatgres {
+export class DatabasePostgres {
     async list(search) {
         let videos
 
